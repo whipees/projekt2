@@ -19,14 +19,6 @@ public class App extends JFrame {
         setTitle("Influencer Tycoon");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        panelMain = new JPanel();
-        Jname = new JLabel("Enter your name: ");
-        textField1 = new JTextField(10);
-        button1 = new JButton("Submit");
-
-        panelMain.add(Jname);
-        panelMain.add(textField1);
-        panelMain.add(button1);
 
         getContentPane().add(panelMain); // Add the initial panel to the content pane
         button1.addActionListener(new ActionListener() {

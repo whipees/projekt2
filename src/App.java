@@ -8,7 +8,6 @@ public class App extends JFrame {
 
     private JPanel ds;
     private JPanel panelMain;
-    private JLabel Jname;
     private JTextField textField1;
     private JButton button1;
 
@@ -38,7 +37,6 @@ public class App extends JFrame {
         revalidate();
         repaint();
     }
-
 
 
 

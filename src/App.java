@@ -38,6 +38,35 @@ public class App extends JFrame {
         repaint();
     }
 
+    public JPanel getDs() {
+        return ds;
+    }
 
+    public void setDs(JPanel ds) {
+        this.ds = ds;
+    }
 
+    public JPanel getPanelMain() {
+        return panelMain;
+    }
+
+    public void setPanelMain(JPanel panelMain) {
+        this.panelMain = panelMain;
+    }
+
+    public JTextField getTextField1() {
+        return textField1;
+    }
+
+    public void setTextField1(JTextField textField1) {
+        this.textField1 = textField1;
+    }
+
+    public JButton getButton1() {
+        return button1;
+    }
+
+    public void setButton1(JButton button1) {
+        this.button1 = button1;
+    }
 }

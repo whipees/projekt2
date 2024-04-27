@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
 
 public class Game extends JFrame{
 
@@ -9,12 +8,12 @@ public class Game extends JFrame{
     private JPanel shopPanel;
     private JLabel cookieText;
     private JButton button1;
-    private JButton button2;
+    private JButton shopButton;
     private int cookies;
 
 
     public Game() {
-
+        getContentPane().add(panel);
         Shop shop = new Shop(this);
         shopPanel = shop.getPanel1();
         button1.addActionListener(new ActionListener() {
@@ -23,23 +22,30 @@ public class Game extends JFrame{
                 updateCookies();
             }
         });
-        button2.addActionListener(new ActionListener() {
+
+        shopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                getContentPane().remove(panel); // Remove the initial panel
-                getContentPane().add(shopPanel); // Add the panel from Game class
+                getContentPane().removeAll();
+                setContentPane(shopPanel);
                 revalidate();
                 repaint();
+
             }
         });
+
+
+
     }
 
     public void start(){
 
 
-        panel.add(cookieText);
-        panel.add(button1);
-        setContentPane(panel);
+
+
+//
+//        panel.add(cookieText);
+//        panel.add(button1);
         setTitle("Influencer Tycoon");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -87,5 +93,21 @@ public class Game extends JFrame{
 
     public void setPanel(JPanel panel) {
         this.panel = panel;
+    }
+
+    public JPanel getShopPanel() {
+        return shopPanel;
+    }
+
+    public void setShopPanel(JPanel shopPanel) {
+        this.shopPanel = shopPanel;
+    }
+
+    public JButton getShopButton() {
+        return shopButton;
+    }
+
+    public void setShopButton(JButton shopButton) {
+        this.shopButton = shopButton;
     }
 }

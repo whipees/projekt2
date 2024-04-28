@@ -12,30 +12,29 @@ public class Shop extends JFrame{
     private JButton button3;
     private JLabel moneytext;
 
-    public Shop(Game game) {
-        money = game.getCookies();
+    public Shop(App app) {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                backButton(game);
+                backButton(app);
             }
         });
     }
-public void startShop(){
+    public void startShop(){
 
-    setContentPane(panel1);
-    setTitle("Influencer Tycoon");
-    setSize(400, 400);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setVisible(true);
-}
+        setContentPane(panel1);
+        setTitle("Influencer Tycoon");
+        setSize(400, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
 
-//public void backButton(Game game){
-//    getContentPane().remove(panel1); // Remove the initial panel
-//    getContentPane().add(game.getPanel()); // Add the panel from Game class
-//    revalidate();
-//    repaint();
-//}
+    public void backButton(App app){
+        app.getContentPane().removeAll(); // Remove the initial panel
+        app.getContentPane().add(app.getDs()); // Add the panel from app class
+        app.revalidate();
+        app.repaint();
+    }
 
 
     public int getMoney() {
@@ -44,6 +43,7 @@ public void startShop(){
 
     public void setMoney(int money) {
         this.money = money;
+        this.moneytext.setText("Money: " +money);
     }
 
     public JButton getButton1() {

@@ -12,10 +12,11 @@ public class Game extends JFrame{
     private int cookies;
 
 
-    public Game() {
-        getContentPane().add(panel);
-        Shop shop = new Shop(this);
+    public Game(App app) {
+        //getContentPane().add(panel);
+        Shop shop = new Shop(app);
         shopPanel = shop.getPanel1();
+
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -26,11 +27,12 @@ public class Game extends JFrame{
         shopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                getContentPane().removeAll();
-                setContentPane(shopPanel);
-                revalidate();
-                repaint();
+                app.getContentPane().removeAll();
+                app.getContentPane().add(shopPanel);
+                app.revalidate();
+                app.repaint();
 
+                shop.setMoney(cookies);
             }
         });
 

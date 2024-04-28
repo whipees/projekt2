@@ -12,9 +12,9 @@ public class App extends JFrame {
     private JButton button1;
 
     public App() {
-        Game g = new Game();
-
+        Game g = new Game(this);
         ds = g.getPanel();
+
         setTitle("Influencer Tycoon");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

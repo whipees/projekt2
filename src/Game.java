@@ -9,12 +9,14 @@ public class Game extends JFrame{
     private JLabel cookieText;
     private JButton button1;
     private JButton shopButton;
+    private JLabel hitext;
     private int cookies;
 
 
-    public Game(App app) {
+    public Game(App app1) {
+
         //getContentPane().add(panel);
-        Shop shop = new Shop(app);
+        Shop shop = new Shop(app1,this);
         shopPanel = shop.getPanel1();
 
         button1.addActionListener(new ActionListener() {
@@ -27,10 +29,10 @@ public class Game extends JFrame{
         shopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                app.getContentPane().removeAll();
-                app.getContentPane().add(shopPanel);
-                app.revalidate();
-                app.repaint();
+                app1.getContentPane().removeAll();
+                app1.getContentPane().add(shopPanel);
+                app1.revalidate();
+                app1.repaint();
 
                 shop.setMoney(cookies);
             }
@@ -52,6 +54,7 @@ public class Game extends JFrame{
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
+
 
     }
 
@@ -111,5 +114,13 @@ public class Game extends JFrame{
 
     public void setShopButton(JButton shopButton) {
         this.shopButton = shopButton;
+    }
+
+    public JLabel getHitext() {
+        return hitext;
+    }
+
+    public void setHitext(JLabel hitext) {
+        this.hitext = hitext;
     }
 }

@@ -11,14 +11,18 @@ public class Shop extends JFrame{
     private JButton button2;
     private JButton button3;
     private JLabel moneytext;
+    private JButton button4;
+    private JButton button5;
+    private JButton button6;
 
-    public Shop(App app) {
+    public Shop(App app, Game game) {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                backButton(app);
+                backButton(app,game);
             }
         });
+
     }
     public void startShop(){
 
@@ -29,9 +33,9 @@ public class Shop extends JFrame{
         setVisible(true);
     }
 
-    public void backButton(App app){
+    public void backButton(App app, Game game){
         app.getContentPane().removeAll(); // Remove the initial panel
-        app.getContentPane().add(app.getDs()); // Add the panel from app class
+        app.getContentPane().add(game.getPanel()); // Add the panel from app class
         app.revalidate();
         app.repaint();
     }

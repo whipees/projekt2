@@ -10,14 +10,18 @@ public class App extends JFrame {
     private JPanel panelMain;
     private JTextField textField1;
     private JButton button1;
+    private JPanel welcomeS;
+
 
     public App() {
-        Game g = new Game(this);
-        ds = g.getPanel();
+        MenuMain menuMain = new MenuMain(this);
+        ds = menuMain.getPanel1();
+
 
         setTitle("Influencer Tycoon");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
         getContentPane().add(panelMain); // Add the initial panel to the content pane
         button1.addActionListener(new ActionListener() {
@@ -25,13 +29,14 @@ public class App extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String name = textField1.getText();
                 JOptionPane.showMessageDialog(button1, "Hello, " + name + "!");
-                startGame();
+                startGame(name);
             }
         });
         setVisible(true);
     }
 
-    public void startGame() {
+    public void startGame(String name) {
+        setName(name);
         getContentPane().remove(panelMain); // Remove the initial panel
         getContentPane().add(ds); // Add the panel from Game class
         revalidate();
@@ -68,5 +73,30 @@ public class App extends JFrame {
 
     public void setButton1(JButton button1) {
         this.button1 = button1;
+    }
+
+    public JPanel getWelcomeS() {
+        return welcomeS;
+    }
+
+    public void setWelcomeS(JPanel welcomeS) {
+        this.welcomeS = welcomeS;
+    }
+
+
+    @Override
+    public String toString() {
+        return "App{" +
+                "ds=" + ds +
+                ", panelMain=" + panelMain +
+                ", textField1=" + textField1 +
+                ", button1=" + button1 +
+                ", welcomeS=" + welcomeS +
+                ", name='" +  '\'' +
+                ", rootPane=" + rootPane +
+                ", rootPaneCheckingEnabled=" + rootPaneCheckingEnabled +
+                ", accessibleContext=" + accessibleContext +
+                ", accessibleContext=" + accessibleContext +
+                '}';
     }
 }

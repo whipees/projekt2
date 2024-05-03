@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Shop extends JFrame{
+public class Shop extends JFrame {
     private int money;
     private JPanel panel1;
     private JLabel label;
@@ -16,15 +16,29 @@ public class Shop extends JFrame{
     private JButton button6;
 
     public Shop(App app, Game game) {
+
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                backButton(app,game);
+                backButton(app, game);
             }
         });
 
+        button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (game.getCookies()>=50){
+                    game.setCookies(game.getCookies()-50);
+                    plus2Button(game);
+                    setMoney(game.getCookies());
+                    game.getCookieText().setText("Subscribers: "+ game.getCookies());
+                }
+
+            }
+        });
     }
-    public void startShop(){
+
+    public void startShop() {
 
         setContentPane(panel1);
         setTitle("Influencer Tycoon");
@@ -33,11 +47,15 @@ public class Shop extends JFrame{
         setVisible(true);
     }
 
-    public void backButton(App app, Game game){
+    public void backButton(App app, Game game) {
         app.getContentPane().removeAll(); // Remove the initial panel
         app.getContentPane().add(game.getPanel()); // Add the panel from app class
         app.revalidate();
         app.repaint();
+    }
+
+    public void plus2Button(Game game) {
+            game.setAddtwo(true);
     }
 
 
@@ -47,7 +65,7 @@ public class Shop extends JFrame{
 
     public void setMoney(int money) {
         this.money = money;
-        this.moneytext.setText("Money: " +money);
+        this.moneytext.setText("Money: " + money);
     }
 
     public JButton getButton1() {

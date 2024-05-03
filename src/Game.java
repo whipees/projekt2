@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Game extends JFrame{
+public class Game extends JFrame {
 
     private JPanel panel;
     private JPanel shopPanel;
@@ -10,13 +10,14 @@ public class Game extends JFrame{
     private JButton button1;
     private JButton shopButton;
     private JLabel hitext;
+    private boolean addtwo = false;
     private int cookies;
 
 
     public Game(App app1) {
 
         //getContentPane().add(panel);
-        Shop shop = new Shop(app1,this);
+        Shop shop = new Shop(app1, this);
         shopPanel = shop.getPanel1();
 
         button1.addActionListener(new ActionListener() {
@@ -39,12 +40,9 @@ public class Game extends JFrame{
         });
 
 
-
     }
 
-    public void start(){
-
-
+    public void start() {
 
 
 //
@@ -59,11 +57,18 @@ public class Game extends JFrame{
     }
 
     public void updateCookies() {
-        cookies++;
+        if (!addtwo) {
+            cookies++;
+
+        } else if (addtwo) {
+            setCookies(getCookies() + 2);
+
+        }
         cookieText.setText("Subscribers: " + cookies);
+
     }
 
-    public void shopAppeal(){
+    public void shopAppeal() {
 
     }
 
@@ -122,5 +127,13 @@ public class Game extends JFrame{
 
     public void setHitext(JLabel hitext) {
         this.hitext = hitext;
+    }
+
+    public boolean isAddtwo() {
+        return addtwo;
+    }
+
+    public void setAddtwo(boolean addtwo) {
+        this.addtwo = addtwo;
     }
 }

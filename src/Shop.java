@@ -14,6 +14,7 @@ public class Shop extends JFrame {
     private JButton button4;
     private JButton button5;
     private JButton button6;
+    private JButton submitButton;
 
     public Shop(App app, Game game) {
 
@@ -27,11 +28,12 @@ public class Shop extends JFrame {
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (game.getCookies()>=50){
-                    game.setCookies(game.getCookies()-50);
+                if (game.getSubscribers()>=50){
+                    game.setSubscribers(game.getSubscribers()-50);
                     plus2Button(game);
-                    setMoney(game.getCookies());
-                    game.getCookieText().setText("Subscribers: "+ game.getCookies());
+                    setMoney(game.getSubscribers());
+                    game.getSubscribersText().setText("Subscribers: "+ game.getSubscribers());
+                    button3.setEnabled(false);
                 }
 
             }

@@ -6,12 +6,12 @@ public class Game extends JFrame {
 
     private JPanel panel;
     private JPanel shopPanel;
-    private JLabel cookieText;
-    private JButton button1;
+    private JLabel subscribersText;
+    private JButton miningButton;
     private JButton shopButton;
     private JLabel hitext;
     private boolean addtwo = false;
-    private int cookies;
+    private int subscribers;
 
 
     public Game(App app1) {
@@ -20,10 +20,10 @@ public class Game extends JFrame {
         Shop shop = new Shop(app1, this);
         shopPanel = shop.getPanel1();
 
-        button1.addActionListener(new ActionListener() {
+        miningButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                updateCookies();
+                updateSubs();
             }
         });
 
@@ -35,66 +35,50 @@ public class Game extends JFrame {
                 app1.revalidate();
                 app1.repaint();
 
-                shop.setMoney(cookies);
+                shop.setMoney(subscribers);
             }
         });
 
 
     }
 
-    public void start() {
 
-
-//
-//        panel.add(cookieText);
-//        panel.add(button1);
-        setTitle("Influencer Tycoon");
-        setSize(400, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-
-
-    }
-
-    public void updateCookies() {
+    public void updateSubs() {
         if (!addtwo) {
-            cookies++;
+            subscribers++;
 
         } else if (addtwo) {
-            setCookies(getCookies() + 2);
+            setSubscribers(getSubscribers() + 2);
 
         }
-        cookieText.setText("Subscribers: " + cookies);
-
-    }
-
-    public void shopAppeal() {
+        subscribersText.setText("Subscribers: " + subscribers);
 
     }
 
 
-    public JLabel getCookieText() {
-        return cookieText;
+
+    public JLabel getSubscribersText() {
+        return subscribersText;
     }
 
-    public void setCookieText(JLabel cookieText) {
-        this.cookieText = cookieText;
+    public void setSubscribersText(JLabel subscribersText) {
+        this.subscribersText = subscribersText;
     }
 
-    public JButton getButton1() {
-        return button1;
+    public JButton getMiningButton() {
+        return miningButton;
     }
 
-    public void setButton1(JButton button1) {
-        this.button1 = button1;
+    public void setMiningButton(JButton miningButton) {
+        this.miningButton = miningButton;
     }
 
-    public int getCookies() {
-        return cookies;
+    public int getSubscribers() {
+        return subscribers;
     }
 
-    public void setCookies(int cookies) {
-        this.cookies = cookies;
+    public void setSubscribers(int subscribers) {
+        this.subscribers = subscribers;
     }
 
     public JPanel getPanel() {

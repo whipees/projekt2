@@ -9,6 +9,7 @@ public class App extends JFrame {
     private JPanel panelMain;
     private JTextField textField1;
     private JButton submitButton;
+
     private JPanel welcomeScreen;
 
 

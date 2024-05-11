@@ -16,6 +16,10 @@ public class Game extends JFrame {
 
     public Game(App app1) {
 
+        if (!app1.getUsername().isEmpty()){
+            hitext.setText("Hello "+ app1.getUsername());
+        }
+
         //getContentPane().add(panel);
         Shop shop = new Shop(app1, this);
         shopPanel = shop.getPanel1();

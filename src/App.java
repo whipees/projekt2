@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
 public class App extends JFrame {
 
@@ -9,13 +10,13 @@ public class App extends JFrame {
     private JPanel panelMain;
     private JTextField textField1;
     private JButton submitButton;
+    private String username;
 
     private JPanel welcomeScreen;
 
 
     public App() {
-        MenuMain menuMain = new MenuMain(this);
-        gamePanel = menuMain.getPanel1();
+
 
 
         setTitle("Influencer Tycoon");
@@ -28,15 +29,20 @@ public class App extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String name = textField1.getText();
+                username = name;
+
+
                 JOptionPane.showMessageDialog(submitButton, "Hello, " + name + "!");
-                startGame(name);
+                startGame();
             }
         });
         setVisible(true);
     }
 
-    public void startGame(String name) {
-        setName(name);
+    public void startGame() {
+        MenuMain menuMain = new MenuMain(this);
+        gamePanel = menuMain.getPanel1();
+        System.out.println(username);
         getContentPane().remove(panelMain); // Remove the initial panel
         getContentPane().add(gamePanel); // Add the panel from Game class
         revalidate();
@@ -84,15 +90,24 @@ public class App extends JFrame {
     }
 
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     @Override
     public String toString() {
         return "App{" +
-                "gamePanel=" + gamePanel +
+
+                ", gamePanel=" + gamePanel +
                 ", panelMain=" + panelMain +
                 ", textField1=" + textField1 +
                 ", submitButton=" + submitButton +
+                ", username='" + username + '\'' +
                 ", welcomeScreen=" + welcomeScreen +
-                ", name='" +  '\'' +
                 ", rootPane=" + rootPane +
                 ", rootPaneCheckingEnabled=" + rootPaneCheckingEnabled +
                 ", accessibleContext=" + accessibleContext +

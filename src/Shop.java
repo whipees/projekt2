@@ -18,6 +18,8 @@ public class Shop extends JFrame {
 
     public Shop(App app, Game game) {
 
+
+
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -43,6 +45,7 @@ public class Shop extends JFrame {
     public void startShop() {
 
         setContentPane(panel1);
+
         setTitle("Influencer Tycoon");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

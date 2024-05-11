@@ -102,7 +102,7 @@
         <properties>
           <font name="Arial Black" size="18"/>
           <foreground color="-16777216"/>
-          <text value="New Camera"/>
+          <text value="New Microphone"/>
         </properties>
       </component>
       <component id="7339f" class="javax.swing.JLabel" binding="itemName3">
@@ -112,7 +112,7 @@
         <properties>
           <font name="Arial Black" size="18"/>
           <foreground color="-16777216"/>
-          <text value="New Camera"/>
+          <text value="New Graphics"/>
         </properties>
       </component>
       <component id="6894" class="javax.swing.JLabel" binding="itemName4">
@@ -122,7 +122,7 @@
         <properties>
           <font name="Arial Black" size="18"/>
           <foreground color="-16777216"/>
-          <text value="New Camera"/>
+          <text value="New PC"/>
         </properties>
       </component>
       <component id="85d0b" class="javax.swing.JLabel" binding="itemName5">
@@ -132,7 +132,7 @@
         <properties>
           <font name="Arial Black" size="18"/>
           <foreground color="-16777216"/>
-          <text value="New Camera"/>
+          <text value="New Partner"/>
         </properties>
       </component>
       <component id="3d421" class="javax.swing.JLabel" binding="itemName6">
@@ -142,7 +142,7 @@
         <properties>
           <font name="Arial Black" size="18"/>
           <foreground color="-16777216"/>
-          <text value="New Camera"/>
+          <text value="New Studio"/>
         </properties>
       </component>
       <component id="c1ab8" class="javax.swing.JLabel" binding="itemPrice4">
@@ -152,7 +152,7 @@
         <properties>
           <font size="16"/>
           <foreground color="-16777216"/>
-          <text value="Price: 50"/>
+          <text value="Price: 1000"/>
         </properties>
       </component>
       <component id="b1146" class="javax.swing.JLabel" binding="itemPrice5">
@@ -162,7 +162,7 @@
         <properties>
           <font size="16"/>
           <foreground color="-16777216"/>
-          <text value="Price: 50"/>
+          <text value="Price: 1500"/>
         </properties>
       </component>
       <component id="fb626" class="javax.swing.JLabel" binding="itemPrice6">
@@ -172,7 +172,7 @@
         <properties>
           <font size="16"/>
           <foreground color="-16777216"/>
-          <text value="Price: 50"/>
+          <text value="Price: 4000"/>
         </properties>
       </component>
       <component id="8c62e" class="javax.swing.JButton" binding="mineButton2">
@@ -200,7 +200,7 @@
         <properties>
           <font size="16"/>
           <foreground color="-16777216"/>
-          <text value="Price: 50"/>
+          <text value="Price: 500"/>
         </properties>
       </component>
       <component id="2df55" class="javax.swing.JLabel" binding="itemPrice2">
@@ -210,7 +210,7 @@
         <properties>
           <font size="16"/>
           <foreground color="-16777216"/>
-          <text value="Price: 50"/>
+          <text value="Price: 470"/>
         </properties>
       </component>
     </children>

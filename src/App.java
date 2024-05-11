@@ -20,7 +20,7 @@ public class App extends JFrame {
 
 
         setTitle("Influencer Tycoon");
-        setSize(400, 400);
+        setSize(600, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 

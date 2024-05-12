@@ -23,7 +23,7 @@ public class Game extends JFrame {
 
 
     public Game(App app1) {
-        setSubscribers(50000);
+
         if (!app1.getUsername().isEmpty()) {
             hitext.setText("Hello " + app1.getUsername());
         }
@@ -77,7 +77,7 @@ public class Game extends JFrame {
 
     }
     public void startSubAutoTwoUpdate() {
-        while (!auto2check){
+
             Timer timer = new Timer(2000, new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -85,7 +85,7 @@ public class Game extends JFrame {
                 }
             });
             timer.start();
-        }
+
 
     }
 

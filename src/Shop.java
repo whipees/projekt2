@@ -30,7 +30,7 @@ public class Shop extends JFrame {
 
     public Shop(App app, Game game) {
 
-
+    updateMoney(game);
 
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -42,37 +42,50 @@ public class Shop extends JFrame {
         mineButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (game.getSubscribers()>=50){
-                    game.setSubscribers(game.getSubscribers()-50);
+                if (game.getSubscribers() >= 50) {
+                    game.setSubscribers(game.getSubscribers() - 50);
                     plus2Button(game);
                     setMoney(game.getSubscribers());
-                    game.getSubscribersText().setText("Subscribers: "+ game.getSubscribers());
+                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
                     mineButton1.setEnabled(false);
                 }
 
             }
         });
+        mineButton5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (game.getSubscribers() >= 1500) {
+                    game.setSubscribers(game.getSubscribers() - 1500);
+                    game.startSubAutoUpdate();
+                    setMoney(game.getSubscribers());
+                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+                    mineButton5.setEnabled(false);
+                }
+            }
+        });
     }
 
-    public void startShop() {
-
-        setContentPane(panel1);
-
-        setTitle("Influencer Tycoon");
-        setSize(400, 400);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
+    public void updateMoney(Game game){
+        Timer timer = new Timer(2000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setMoney(game.getSubscribers());
+            }
+        });
+        timer.start();
     }
+
 
     public void backButton(App app, Game game) {
-        app.getContentPane().removeAll(); // Remove the initial panel
-        app.getContentPane().add(game.getPanel()); // Add the panel from app class
+        app.getContentPane().removeAll();
+        app.getContentPane().add(game.getPanel());
         app.revalidate();
         app.repaint();
     }
 
     public void plus2Button(Game game) {
-            game.setAddtwo(true);
+        game.setAddtwo(true);
     }
 
 

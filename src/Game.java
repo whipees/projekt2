@@ -14,12 +14,12 @@ public class Game extends JFrame {
     private int subscribers;
     private boolean problemCheck = true;
     private boolean problemCheck2 = true;
+    private long startTime = System.currentTimeMillis();
 
 
     public Game(App app1) {
-
-        if (!app1.getUsername().isEmpty()){
-            hitext.setText("Hello "+ app1.getUsername());
+        if (!app1.getUsername().isEmpty()) {
+            hitext.setText("Hello " + app1.getUsername());
         }
 
         //getContentPane().add(panel);
@@ -31,16 +31,16 @@ public class Game extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 updateSubs();
 
-                if (subscribers == 500 ||subscribers==501 && problemCheck){
-                    JOptionPane.showMessageDialog(miningButton,"Oh no, you did something very very badly. The subscribers are going away");
-                    setSubscribers(getSubscribers()-350);
+                if (subscribers == 500 && problemCheck || subscribers == 501 && problemCheck) {
+                    JOptionPane.showMessageDialog(miningButton, "Oh no, you did something very very badly. The subscribers are going away");
+                    setSubscribers(getSubscribers() - 350);
                     setProblemCheck(false);
                     subscribersText.setText("Subscribers: " + subscribers);
                 }
 
-                if (subscribers == 1000 ||subscribers==1001 && problemCheck2){
-                    JOptionPane.showMessageDialog(miningButton,"Oh no, you did something very very badly. The subscribers are going away");
-                    setSubscribers(getSubscribers()-650);
+                if (subscribers == 1000 && problemCheck2 || subscribers == 1001 && problemCheck2) {
+                    JOptionPane.showMessageDialog(miningButton, "Oh no, you did something very very badly. The subscribers are going away");
+                    setSubscribers(getSubscribers() - 650);
                     setProblemCheck2(false);
                     subscribersText.setText("Subscribers: " + subscribers);
                 }
@@ -63,6 +63,25 @@ public class Game extends JFrame {
     }
 
 
+    public void SubAuto() {
+
+
+        setSubscribers(getSubscribers() + 10);
+        subscribersText.setText("Subscribers: " + subscribers);
+
+
+    }
+    public void startSubAutoUpdate() {
+        Timer timer = new Timer(2000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SubAuto();
+            }
+        });
+        timer.start();
+    }
+
+
     public void updateSubs() {
         if (!addtwo) {
             subscribers++;
@@ -74,7 +93,6 @@ public class Game extends JFrame {
         subscribersText.setText("Subscribers: " + subscribers);
 
     }
-
 
 
     public JLabel getSubscribersText() {

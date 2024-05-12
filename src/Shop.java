@@ -48,19 +48,82 @@ public class Shop extends JFrame {
                     setMoney(game.getSubscribers());
                     game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
                     mineButton1.setEnabled(false);
+                    mineButton3.setEnabled(false);
                 }
 
             }
         });
+        mineButton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (game.getSubscribers() >= 470) {
+                    game.setSubscribers(game.getSubscribers() - 470);
+                    plus10button(game);
+                    setMoney(game.getSubscribers());
+                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+                    mineButton1.setEnabled(false);
+                    mineButton2.setEnabled(false);
+                    mineButton3.setEnabled(true);
+                }
+            }
+        });
+        mineButton3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (game.getSubscribers() >= 500) {
+                    game.setSubscribers(game.getSubscribers() - 500);
+                    plus20button(game);
+                    setMoney(game.getSubscribers());
+                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+                    mineButton1.setEnabled(false);
+                    mineButton2.setEnabled(false);
+                    mineButton3.setEnabled(false);
+                }
+            }
+        });
+
+        mineButton4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (game.getSubscribers() >= 1000) {
+                    game.setSubscribers(game.getSubscribers() - 1000);
+                    game.startSubAutoTwoUpdate();
+                    setMoney(game.getSubscribers());
+                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+                    mineButton4.setEnabled(false);
+                    mineButton6.setEnabled(false);
+                }
+            }
+        });
+
         mineButton5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (game.getSubscribers() >= 1500) {
                     game.setSubscribers(game.getSubscribers() - 1500);
-                    game.startSubAutoUpdate();
+                    game.startSubAutoTenUpdate();
                     setMoney(game.getSubscribers());
                     game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
                     mineButton5.setEnabled(false);
+                    mineButton6.setEnabled(true);
+                    mineButton4.setEnabled(false);
+
+                }
+            }
+        });
+
+
+        mineButton6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (game.getSubscribers() >= 4000) {
+                    game.setSubscribers(game.getSubscribers() - 4000);
+                    game.startSubAutoHunUpdate();
+                    setMoney(game.getSubscribers());
+                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+                    mineButton5.setEnabled(false);
+                    mineButton4.setEnabled(false);
+                    mineButton6.setEnabled(false);
                 }
             }
         });
@@ -86,6 +149,16 @@ public class Shop extends JFrame {
 
     public void plus2Button(Game game) {
         game.setAddtwo(true);
+    }
+    public void plus10button(Game game) {
+        game.setAddtwo(false);
+        game.setAddten(true);
+    }
+
+    public void plus20button(Game game) {
+        game.setAddten(false);
+        game.setAddtwo(false);
+        game.setAddtwenty(true);
     }
 
 

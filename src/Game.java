@@ -11,6 +11,11 @@ public class Game extends JFrame {
     private JButton shopButton;
     private JLabel hitext;
     private boolean addtwo = false;
+    private boolean addten = false;
+    private boolean addtwenty = false;
+    private boolean auto2check = false;
+    private boolean auto10check = false;
+
     private int subscribers;
     private boolean problemCheck = true;
     private boolean problemCheck2 = true;
@@ -18,6 +23,7 @@ public class Game extends JFrame {
 
 
     public Game(App app1) {
+        setSubscribers(50000);
         if (!app1.getUsername().isEmpty()) {
             hitext.setText("Hello " + app1.getUsername());
         }
@@ -62,8 +68,32 @@ public class Game extends JFrame {
 
     }
 
+    public void SubAutoTwo() {
 
-    public void SubAuto() {
+
+        setSubscribers(getSubscribers() + 2);
+        subscribersText.setText("Subscribers: " + subscribers);
+
+
+    }
+    public void startSubAutoTwoUpdate() {
+        while (!auto2check){
+            Timer timer = new Timer(2000, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    SubAutoTwo();
+                }
+            });
+            timer.start();
+        }
+
+    }
+
+
+
+
+
+    public void SubAutoTen() {
 
 
         setSubscribers(getSubscribers() + 10);
@@ -71,24 +101,44 @@ public class Game extends JFrame {
 
 
     }
-    public void startSubAutoUpdate() {
+    public void startSubAutoTenUpdate() {
         Timer timer = new Timer(2000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SubAuto();
+                SubAutoTen();
+            }
+        });
+        timer.start();
+    }
+    public void SubAutoHun() {
+
+
+        setSubscribers(getSubscribers() + 100);
+        subscribersText.setText("Subscribers: " + subscribers);
+
+
+    }
+    public void startSubAutoHunUpdate() {
+        Timer timer = new Timer(2000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SubAutoHun();
             }
         });
         timer.start();
     }
 
-
     public void updateSubs() {
-        if (!addtwo) {
+        if (!addtwo && !addten && !addtwenty) {
             subscribers++;
 
-        } else if (addtwo) {
+        } else if (addtwo && !addten && !addtwenty) {
             setSubscribers(getSubscribers() + 2);
 
+        } else if (!addtwo && addten && !addtwenty) {
+            setSubscribers(getSubscribers() + 10);
+        } else if (!addtwo && !addten && addtwenty) {
+            setSubscribers(getSubscribers() + 20);
         }
         subscribersText.setText("Subscribers: " + subscribers);
 
@@ -167,6 +217,54 @@ public class Game extends JFrame {
         this.problemCheck2 = problemCheck2;
     }
 
+    public boolean isAddten() {
+        return addten;
+    }
+
+    public void setAddten(boolean addten) {
+        this.addten = addten;
+    }
+
+    public boolean isAddtwenty() {
+        return addtwenty;
+    }
+
+    public void setAddtwenty(boolean addtwenty) {
+        this.addtwenty = addtwenty;
+    }
+
+    public boolean isProblemCheck() {
+        return problemCheck;
+    }
+
+    public boolean isProblemCheck2() {
+        return problemCheck2;
+    }
+
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
+    }
+
+    public boolean isAuto2check() {
+        return auto2check;
+    }
+
+    public void setAuto2check(boolean auto2check) {
+        this.auto2check = auto2check;
+    }
+
+    public boolean isAuto10check() {
+        return auto10check;
+    }
+
+    public void setAuto10check(boolean auto10check) {
+        this.auto10check = auto10check;
+    }
+
     @Override
     public String toString() {
         return "Game{" +
@@ -177,14 +275,16 @@ public class Game extends JFrame {
                 ", shopButton=" + shopButton +
                 ", hitext=" + hitext +
                 ", addtwo=" + addtwo +
+                ", addten=" + addten +
+                ", addtwenty=" + addtwenty +
                 ", subscribers=" + subscribers +
                 ", problemCheck=" + problemCheck +
+                ", problemCheck2=" + problemCheck2 +
+                ", startTime=" + startTime +
                 ", rootPane=" + rootPane +
                 ", rootPaneCheckingEnabled=" + rootPaneCheckingEnabled +
                 ", accessibleContext=" + accessibleContext +
                 ", accessibleContext=" + accessibleContext +
                 '}';
     }
-
-
 }

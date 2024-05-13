@@ -11,11 +11,21 @@ public class MenuMain {
 
     public MenuMain(App app) {
         Game g = new Game(app);
+        Tutorial t = new Tutorial(app, this);
         playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 app.getContentPane().removeAll();
                 app.getContentPane().add(g.getPanel());
+                app.revalidate();
+                app.repaint();
+            }
+        });
+        tutorialButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                app.getContentPane().removeAll();
+                app.getContentPane().add(t.getTutorialPanel());
                 app.revalidate();
                 app.repaint();
             }

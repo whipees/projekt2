@@ -24,6 +24,7 @@ public class Tutorial {
         app.getContentPane().add(menu.getPanel1());
         app.revalidate();
         app.repaint();
+
     }
 
     public JPanel getTutorialPanel() {

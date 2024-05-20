@@ -12,6 +12,7 @@ public class MenuMain {
     public MenuMain(App app) {
         Game g = new Game(app);
         Tutorial t = new Tutorial(app, this);
+        Credits c = new Credits(app,this);
         playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -26,6 +27,15 @@ public class MenuMain {
             public void actionPerformed(ActionEvent e) {
                 app.getContentPane().removeAll();
                 app.getContentPane().add(t.getTutorialPanel());
+                app.revalidate();
+                app.repaint();
+            }
+        });
+        creditsButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                app.getContentPane().removeAll();
+                app.getContentPane().add(c.getPanel());
                 app.revalidate();
                 app.repaint();
             }

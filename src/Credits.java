@@ -2,11 +2,19 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Credits to creator are here
+ */
 public class Credits {
     private JLabel name;
     private JButton backButton;
     private JPanel panel;
 
+    /**
+     * Only backbutton is here to get to menu
+     * @param app used to change screenery
+     * @param menu used to get menu panel
+     */
     public Credits(App app, MenuMain menu) {
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -15,7 +23,11 @@ public class Credits {
             }
         });
     }
-
+    /**
+     * Changes back to menu
+     * @param app used to change screens
+     * @param menu used to get menu panel
+     */
     public void back(App app, MenuMain menu) {
         app.getContentPane().removeAll();
         app.getContentPane().add(menu.getPanel1());

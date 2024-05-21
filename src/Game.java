@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Class where the game is played in
+ */
 public class Game extends JFrame {
 
     private JPanel panel;
@@ -21,9 +24,15 @@ public class Game extends JFrame {
     private boolean problemCheck2 = true;
     private long startTime = System.currentTimeMillis();
 
-
+    /**
+     * ActionListeres are for mining or switching to shops
+     *
+     * @param app1 to change the panel
+     */
     public Game(App app1) {
-
+        /**
+         * IF user doesn't set his own username it will change to Influencer - it is set in .form file
+         */
         if (!app1.getUsername().isEmpty()) {
             hitext.setText("Hello " + app1.getUsername());
         }
@@ -36,14 +45,18 @@ public class Game extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 updateSubs();
-
+                /**
+                 * if user gets 500 or 501 seubs, he will have a problem and his subs will do away, cant happen twice
+                 */
                 if (subscribers == 500 && problemCheck || subscribers == 501 && problemCheck) {
                     JOptionPane.showMessageDialog(miningButton, "Oh no, you did something very very badly. The subscribers are going away");
                     setSubscribers(getSubscribers() - 350);
                     setProblemCheck(false);
                     subscribersText.setText("Subscribers: " + subscribers);
                 }
-
+                /**
+                 * same thing but with 1000 or 1001
+                 */
                 if (subscribers == 1000 && problemCheck2 || subscribers == 1001 && problemCheck2) {
                     JOptionPane.showMessageDialog(miningButton, "Oh no, you did something very very badly. The subscribers are going away");
                     setSubscribers(getSubscribers() - 650);
@@ -68,31 +81,34 @@ public class Game extends JFrame {
 
     }
 
+    /**
+     * method used to add 2 subs to sub count
+     */
     public void SubAutoTwo() {
-
-
         setSubscribers(getSubscribers() + 2);
         subscribersText.setText("Subscribers: " + subscribers);
-
-
     }
+
+    /**
+     * if user buys this auto upgdrade it will automatically add 2 subs every two sec
+     */
     public void startSubAutoTwoUpdate() {
 
-            Timer timer = new Timer(2000, new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    SubAutoTwo();
-                }
-            });
-            timer.start();
+        Timer timer = new Timer(2000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SubAutoTwo();
+            }
+        });
+        timer.start();
 
 
     }
 
 
-
-
-
+    /**
+     * method used to add 10 subs to sub count
+     */
     public void SubAutoTen() {
 
 
@@ -101,6 +117,10 @@ public class Game extends JFrame {
 
 
     }
+
+    /**
+     * if user buys this auto upgdrade it will automatically add 10 subs every two sec
+     */
     public void startSubAutoTenUpdate() {
         Timer timer = new Timer(2000, new ActionListener() {
             @Override
@@ -110,6 +130,10 @@ public class Game extends JFrame {
         });
         timer.start();
     }
+
+    /**
+     * method used to add 100 subs to sub count
+     */
     public void SubAutoHun() {
 
 
@@ -118,6 +142,10 @@ public class Game extends JFrame {
 
 
     }
+
+    /**
+     * if user buys this auto upgdrade it will automatically add 100 subs every two sec
+     */
     public void startSubAutoHunUpdate() {
         Timer timer = new Timer(2000, new ActionListener() {
             @Override
@@ -144,7 +172,10 @@ public class Game extends JFrame {
 
     }
 
-
+    /**
+     * displays sub count
+     * @return subcounter
+     */
     public JLabel getSubscribersText() {
         return subscribersText;
     }

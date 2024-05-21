@@ -3,6 +3,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
 
+/**
+ * All of the  game construction is generated here
+ */
 public class App extends JFrame {
 
 
@@ -14,7 +17,11 @@ public class App extends JFrame {
 
     private JPanel welcomeScreen;
 
-
+    /**
+     * Contstructor for App class.
+     * Builds Jframe (title,size, etc.)
+     * Contains 1 actionListener
+     */
     public App() {
 
 
@@ -25,6 +32,11 @@ public class App extends JFrame {
 
 
         getContentPane().add(panelMain); // Add the initial panel to the content pane
+
+        /**
+         * If user enters his name dialog will pop up
+         * if not his name will be set to Influencer
+         */
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,6 +51,9 @@ public class App extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Creates MainMenu class and adds it into Content pane
+     */
     public void startGame() {
         MenuMain menuMain = new MenuMain(this);
         gamePanel = menuMain.getPanel1();

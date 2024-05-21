@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Shop class
+ * user upgrades his game expirience here
+ */
 public class Shop extends JFrame {
     private int money;
     private JPanel panel1;
@@ -28,6 +32,11 @@ public class Shop extends JFrame {
     private JLabel itemName5;
     private JLabel itemName6;
 
+    /**
+     * Contains ActionListener for every deal in the shop
+     * @param app to be able to change the contentpane
+     * @param game to get back to game panel
+     */
     public Shop(App app, Game game) {
 
     updateMoney(game);
@@ -38,7 +47,10 @@ public class Shop extends JFrame {
                 backButton(app, game);
             }
         });
-
+        /**
+         * deal in the shop to have +2 subs for every click
+         * checks if you have the minimum amount of 50 subs
+         */
         mineButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,6 +65,10 @@ public class Shop extends JFrame {
 
             }
         });
+        /**
+         * deal in the shop to have +10 subs for every click
+         * checks if you have the minimum amount of 470 subs
+         */
         mineButton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -67,6 +83,10 @@ public class Shop extends JFrame {
                 }
             }
         });
+        /**
+         * deal in the shop to have +20 subs for every click
+         * checks if you have the minimum amount of 500 subs
+         */
         mineButton3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -81,7 +101,10 @@ public class Shop extends JFrame {
                 }
             }
         });
-
+        /**
+         * deal in the shop to have +2 subs every two secs automatically
+         * checks if you have the minimum amount of 1000 subs
+         */
         mineButton4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -95,7 +118,10 @@ public class Shop extends JFrame {
                 }
             }
         });
-
+        /**
+         * deal in the shop to have +10 subs every two secs automatically
+         * checks if you have the minimum amount of 1500 subs
+         */
         mineButton5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -112,7 +138,10 @@ public class Shop extends JFrame {
             }
         });
 
-
+        /**
+         * deal in the shop to have +100 subs every two secs automatically
+         * checks if you have the minimum amount of 4000 subs
+         */
         mineButton6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -129,6 +158,10 @@ public class Shop extends JFrame {
         });
     }
 
+    /**
+     * updates money every two secs to be displayed corectlly in the shop
+     * @param game to get subs
+     */
     public void updateMoney(Game game){
         Timer timer = new Timer(2000, new ActionListener() {
             @Override
@@ -139,7 +172,11 @@ public class Shop extends JFrame {
         timer.start();
     }
 
-
+    /**
+     * to get back to the game
+     * @param app to be able to change the Content pane
+     * @param game to get the Game panel
+     */
     public void backButton(App app, Game game) {
         app.getContentPane().removeAll();
         app.getContentPane().add(game.getPanel());
@@ -147,25 +184,43 @@ public class Shop extends JFrame {
         app.repaint();
     }
 
+    /**
+     * if you buy it, it will be set to non active button
+     * @param game to start the method in the game class
+     */
     public void plus2Button(Game game) {
         game.setAddtwo(true);
     }
+    /**
+     * if you buy it, it will be set to non active button
+     * @param game to start the method in the game class
+     */
     public void plus10button(Game game) {
         game.setAddtwo(false);
         game.setAddten(true);
     }
-
+    /**
+     * if you buy it, it will be set to non active button
+     * @param game to start the method in the game class
+     */
     public void plus20button(Game game) {
         game.setAddten(false);
         game.setAddtwo(false);
         game.setAddtwenty(true);
     }
 
-
+    /**
+     *
+     * @return money
+     */
     public int getMoney() {
         return money;
     }
 
+    /**
+     * sets correct money when you enter the shop
+     * @param money to know how much money user have
+     */
     public void setMoney(int money) {
         this.money = money;
         this.moneytext.setText("Money: " + money);

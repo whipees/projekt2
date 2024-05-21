@@ -2,17 +2,34 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Main menu with Three buttons:
+ * Play
+ * Tutorial
+ * Credits
+ */
 public class MenuMain {
+    /**
+     * class panel
+     */
     private JPanel panel1;
     private JLabel label1;
     private JButton playButton;
     private JButton creditsButton;
     private JButton tutorialButton;
 
+    /**
+     * All the classes for buttons are created here, also the actionlisteners
+     *
+     * @param app  used to change the main content pane
+     */
     public MenuMain(App app) {
         Game g = new Game(app);
         Tutorial t = new Tutorial(app, this);
         Credits c = new Credits(app,this);
+        /**
+         * loads into game onclick
+         */
         playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -22,6 +39,9 @@ public class MenuMain {
                 app.repaint();
             }
         });
+        /**
+         * loads into tutorial
+         */
         tutorialButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -31,6 +51,9 @@ public class MenuMain {
                 app.repaint();
             }
         });
+        /**
+         * loads into credits
+         */
         creditsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

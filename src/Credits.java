@@ -12,20 +12,23 @@ public class Credits {
 
     /**
      * Only backbutton is here to get to menu
-     * @param app used to change screenery
+     *
+     * @param app  used to change screenery
      * @param menu used to get menu panel
      */
     public Credits(App app, MenuMain menu) {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                back(app,menu);
+                back(app, menu);
             }
         });
     }
+
     /**
      * Changes back to menu
-     * @param app used to change screens
+     *
+     * @param app  used to change screens
      * @param menu used to get menu panel
      */
     public void back(App app, MenuMain menu) {

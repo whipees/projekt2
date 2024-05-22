@@ -21,12 +21,12 @@ public class MenuMain {
     /**
      * All the classes for buttons are created here, also the actionlisteners
      *
-     * @param app  used to change the main content pane
+     * @param app used to change the main content pane
      */
     public MenuMain(App app) {
         Game g = new Game(app);
         Tutorial t = new Tutorial(app, this);
-        Credits c = new Credits(app,this);
+        Credits c = new Credits(app, this);
         /**
          * loads into game onclick
          */
@@ -105,14 +105,5 @@ public class MenuMain {
         this.tutorialButton = tutorialButton;
     }
 
-    @Override
-    public String toString() {
-        return "MenuMain{" +
-                "panel1=" + panel1 +
-                ", label1=" + label1 +
-                ", playButton=" + playButton +
-                ", creditsButton=" + creditsButton +
-                ", tutorialButton=" + tutorialButton +
-                '}';
-    }
+
 }

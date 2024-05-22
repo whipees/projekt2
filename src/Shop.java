@@ -34,12 +34,13 @@ public class Shop extends JFrame {
 
     /**
      * Contains ActionListener for every deal in the shop
-     * @param app to be able to change the contentpane
+     *
+     * @param app  to be able to change the contentpane
      * @param game to get back to game panel
      */
     public Shop(App app, Game game) {
 
-    updateMoney(game);
+        updateMoney(game);
 
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -47,122 +48,152 @@ public class Shop extends JFrame {
                 backButton(app, game);
             }
         });
-        /**
-         * deal in the shop to have +2 subs for every click
-         * checks if you have the minimum amount of 50 subs
-         */
+
         mineButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (game.getSubscribers() >= 50) {
-                    game.setSubscribers(game.getSubscribers() - 50);
-                    plus2Button(game);
-                    setMoney(game.getSubscribers());
-                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
-                    mineButton1.setEnabled(false);
-                    mineButton3.setEnabled(false);
-                }
-
+                add2(game);
             }
         });
-        /**
-         * deal in the shop to have +10 subs for every click
-         * checks if you have the minimum amount of 470 subs
-         */
+
         mineButton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (game.getSubscribers() >= 470) {
-                    game.setSubscribers(game.getSubscribers() - 470);
-                    plus10button(game);
-                    setMoney(game.getSubscribers());
-                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
-                    mineButton1.setEnabled(false);
-                    mineButton2.setEnabled(false);
-                    mineButton3.setEnabled(true);
-                }
+                add10(game);
             }
         });
-        /**
-         * deal in the shop to have +20 subs for every click
-         * checks if you have the minimum amount of 500 subs
-         */
+
         mineButton3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (game.getSubscribers() >= 500) {
-                    game.setSubscribers(game.getSubscribers() - 500);
-                    plus20button(game);
-                    setMoney(game.getSubscribers());
-                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
-                    mineButton1.setEnabled(false);
-                    mineButton2.setEnabled(false);
-                    mineButton3.setEnabled(false);
-                }
+                add20(game);
             }
         });
-        /**
-         * deal in the shop to have +2 subs every two secs automatically
-         * checks if you have the minimum amount of 1000 subs
-         */
+
         mineButton4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (game.getSubscribers() >= 1000) {
-                    game.setSubscribers(game.getSubscribers() - 1000);
-                    game.startSubAutoTwoUpdate();
-                    setMoney(game.getSubscribers());
-                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
-                    mineButton4.setEnabled(false);
-                    mineButton6.setEnabled(false);
-                }
+                auto2(game);
             }
         });
-        /**
-         * deal in the shop to have +10 subs every two secs automatically
-         * checks if you have the minimum amount of 1500 subs
-         */
+
         mineButton5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (game.getSubscribers() >= 1500) {
-                    game.setSubscribers(game.getSubscribers() - 1500);
-                    game.startSubAutoTenUpdate();
-                    setMoney(game.getSubscribers());
-                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
-                    mineButton5.setEnabled(false);
-                    mineButton6.setEnabled(true);
-                    mineButton4.setEnabled(false);
-
-                }
+                auto10(game);
             }
         });
 
-        /**
-         * deal in the shop to have +100 subs every two secs automatically
-         * checks if you have the minimum amount of 4000 subs
-         */
+
         mineButton6.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (game.getSubscribers() >= 4000) {
-                    game.setSubscribers(game.getSubscribers() - 4000);
-                    game.startSubAutoHunUpdate();
-                    setMoney(game.getSubscribers());
-                    game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
-                    mineButton5.setEnabled(false);
-                    mineButton4.setEnabled(false);
-                    mineButton6.setEnabled(false);
-                }
+                auto100(game);
             }
         });
     }
 
     /**
+     * deal in the shop to have +2 subs for every click
+     * checks if you have the minimum amount of 50 subs
+     */
+    public void add2(Game game) {
+        if (game.getSubscribers() >= 50) {
+            game.setSubscribers(game.getSubscribers() - 50);
+            plus2Button(game);
+            setMoney(game.getSubscribers());
+            game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+            mineButton1.setEnabled(false);
+            mineButton3.setEnabled(false);
+        }
+    }
+
+    /**
+     * deal in the shop to have +10 subs for every click
+     * checks if you have the minimum amount of 470 subs
+     */
+    public void add10(Game game) {
+        if (game.getSubscribers() >= 470) {
+            game.setSubscribers(game.getSubscribers() - 470);
+            plus10button(game);
+            setMoney(game.getSubscribers());
+            game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+            mineButton1.setEnabled(false);
+            mineButton2.setEnabled(false);
+            mineButton3.setEnabled(true);
+        }
+    }
+
+    /**
+     * deal in the shop to have +20 subs for every click
+     * checks if you have the minimum amount of 500 subs
+     */
+    public void add20(Game game) {
+        if (game.getSubscribers() >= 500) {
+            game.setSubscribers(game.getSubscribers() - 500);
+            plus20button(game);
+            setMoney(game.getSubscribers());
+            game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+            mineButton1.setEnabled(false);
+            mineButton2.setEnabled(false);
+            mineButton3.setEnabled(false);
+        }
+    }
+
+    /**
+     * deal in the shop to have +2 subs every two secs automatically
+     * checks if you have the minimum amount of 1000 subs
+     */
+    public void auto2(Game game) {
+        if (game.getSubscribers() >= 1000) {
+            game.setSubscribers(game.getSubscribers() - 1000);
+            game.startSubAutoTwoUpdate();
+            setMoney(game.getSubscribers());
+            game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+            mineButton4.setEnabled(false);
+            mineButton6.setEnabled(false);
+        }
+    }
+
+    /**
+     * deal in the shop to have +10 subs every two secs automatically
+     * checks if you have the minimum amount of 1500 subs
+     */
+    public void auto10(Game game) {
+        if (game.getSubscribers() >= 1500) {
+            game.setSubscribers(game.getSubscribers() - 1500);
+            game.startSubAutoTenUpdate();
+            setMoney(game.getSubscribers());
+            game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+            mineButton5.setEnabled(false);
+            mineButton6.setEnabled(true);
+            mineButton4.setEnabled(false);
+
+        }
+    }
+
+    /**
+     * deal in the shop to have +100 subs every two secs automatically
+     * checks if you have the minimum amount of 4000 subs
+     */
+    public void auto100(Game game) {
+        if (game.getSubscribers() >= 4000) {
+            game.setSubscribers(game.getSubscribers() - 4000);
+            game.startSubAutoHunUpdate();
+            setMoney(game.getSubscribers());
+            game.getSubscribersText().setText("Subscribers: " + game.getSubscribers());
+            mineButton5.setEnabled(false);
+            mineButton4.setEnabled(false);
+            mineButton6.setEnabled(false);
+        }
+    }
+
+    /**
      * updates money every two secs to be displayed corectlly in the shop
+     *
      * @param game to get subs
      */
-    public void updateMoney(Game game){
+    public void updateMoney(Game game) {
         Timer timer = new Timer(2000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -174,7 +205,8 @@ public class Shop extends JFrame {
 
     /**
      * to get back to the game
-     * @param app to be able to change the Content pane
+     *
+     * @param app  to be able to change the Content pane
      * @param game to get the Game panel
      */
     public void backButton(App app, Game game) {
@@ -186,21 +218,26 @@ public class Shop extends JFrame {
 
     /**
      * if you buy it, it will be set to non active button
+     *
      * @param game to start the method in the game class
      */
     public void plus2Button(Game game) {
         game.setAddtwo(true);
     }
+
     /**
      * if you buy it, it will be set to non active button
+     *
      * @param game to start the method in the game class
      */
     public void plus10button(Game game) {
         game.setAddtwo(false);
         game.setAddten(true);
     }
+
     /**
      * if you buy it, it will be set to non active button
+     *
      * @param game to start the method in the game class
      */
     public void plus20button(Game game) {
@@ -210,7 +247,6 @@ public class Shop extends JFrame {
     }
 
     /**
-     *
      * @return money
      */
     public int getMoney() {
@@ -219,12 +255,28 @@ public class Shop extends JFrame {
 
     /**
      * sets correct money when you enter the shop
+     *
      * @param money to know how much money user have
      */
     public void setMoney(int money) {
         this.money = money;
         this.moneytext.setText("Money: " + money);
     }
+
+    public JPanel getPanel1() {
+        return panel1;
+    }
+
+
+    public JLabel getLabel() {
+        return label;
+    }
+
+
+    public JButton getBackButton() {
+        return backButton;
+    }
+
 
     public JButton getButton1() {
         return button1;
@@ -234,195 +286,64 @@ public class Shop extends JFrame {
         this.button1 = button1;
     }
 
-    public JButton getButton2() {
-        return mineButton3;
-    }
-
-    public void setButton2(JButton button2) {
-        this.mineButton3 = button2;
-    }
-
-    public JButton getButton3() {
-        return mineButton1;
-    }
-
-    public void setButton3(JButton button3) {
-        this.mineButton1 = button3;
-    }
-
-    public JLabel getMoneytext() {
-        return moneytext;
-    }
-
-    public void setMoneytext(JLabel moneytext) {
-        this.moneytext = moneytext;
-    }
-
-    public JPanel getPanel1() {
-        return panel1;
-    }
-
-    public void setPanel1(JPanel panel1) {
-        this.panel1 = panel1;
-    }
-
-    public JLabel getLabel() {
-        return label;
-    }
-
-    public void setLabel(JLabel label) {
-        this.label = label;
-    }
-
-    public JButton getBackButton() {
-        return backButton;
-    }
-
-    public void setBackButton(JButton backButton) {
-        this.backButton = backButton;
-    }
-
     public JButton getMineButton3() {
         return mineButton3;
     }
 
-    public void setMineButton3(JButton mineButton3) {
-        this.mineButton3 = mineButton3;
-    }
 
     public JButton getMineButton1() {
         return mineButton1;
     }
 
-    public void setMineButton1(JButton mineButton1) {
-        this.mineButton1 = mineButton1;
-    }
 
     public JButton getMineButton4() {
         return mineButton4;
     }
 
-    public void setMineButton4(JButton mineButton4) {
-        this.mineButton4 = mineButton4;
-    }
 
     public JButton getMineButton5() {
         return mineButton5;
     }
 
-    public void setMineButton5(JButton mineButton5) {
-        this.mineButton5 = mineButton5;
-    }
 
     public JButton getMineButton6() {
         return mineButton6;
     }
 
-    public void setMineButton6(JButton mineButton6) {
-        this.mineButton6 = mineButton6;
-    }
 
     public JButton getMineButton2() {
         return mineButton2;
     }
 
-    public void setMineButton2(JButton mineButton2) {
-        this.mineButton2 = mineButton2;
-    }
-
-    public JLabel getItemName1() {
-        return itemName1;
-    }
-
-    public void setItemName1(JLabel itemName1) {
-        this.itemName1 = itemName1;
-    }
 
     public JLabel getItemPrice1() {
         return itemPrice1;
     }
 
-    public void setItemPrice1(JLabel itemPrice1) {
-        this.itemPrice1 = itemPrice1;
-    }
 
     public JLabel getItemPrice2() {
         return itemPrice2;
     }
 
-    public void setItemPrice2(JLabel itemPrice2) {
-        this.itemPrice2 = itemPrice2;
-    }
 
     public JLabel getItemPrice3() {
         return itemPrice3;
     }
 
-    public void setItemPrice3(JLabel itemPrice3) {
-        this.itemPrice3 = itemPrice3;
-    }
 
     public JLabel getItemPrice4() {
         return itemPrice4;
     }
 
-    public void setItemPrice4(JLabel itemPrice4) {
-        this.itemPrice4 = itemPrice4;
-    }
 
     public JLabel getItemPrice5() {
         return itemPrice5;
     }
 
-    public void setItemPrice5(JLabel itemPrice5) {
-        this.itemPrice5 = itemPrice5;
-    }
 
     public JLabel getItemPrice6() {
         return itemPrice6;
     }
 
-    public void setItemPrice6(JLabel itemPrice6) {
-        this.itemPrice6 = itemPrice6;
-    }
 
-    public JLabel getItemName2() {
-        return itemName2;
-    }
-
-    public void setItemName2(JLabel itemName2) {
-        this.itemName2 = itemName2;
-    }
-
-    public JLabel getItemName3() {
-        return itemName3;
-    }
-
-    public void setItemName3(JLabel itemName3) {
-        this.itemName3 = itemName3;
-    }
-
-    public JLabel getItemName4() {
-        return itemName4;
-    }
-
-    public void setItemName4(JLabel itemName4) {
-        this.itemName4 = itemName4;
-    }
-
-    public JLabel getItemName5() {
-        return itemName5;
-    }
-
-    public void setItemName5(JLabel itemName5) {
-        this.itemName5 = itemName5;
-    }
-
-    public JLabel getItemName6() {
-        return itemName6;
-    }
-
-    public void setItemName6(JLabel itemName6) {
-        this.itemName6 = itemName6;
-    }
 }

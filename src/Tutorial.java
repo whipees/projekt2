@@ -15,21 +15,23 @@ public class Tutorial {
 
     /**
      * There is a action listener for button to get back to MainMenu
-     * @param app used to change content pane
+     *
+     * @param app  used to change content pane
      * @param menu used to get back to menu screen
      */
     public Tutorial(App app, MenuMain menu) {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                backButton(app,menu);
+                backButton(app, menu);
             }
         });
     }
 
     /**
      * Changes back to menu
-     * @param app used to change screens
+     *
+     * @param app  used to change screens
      * @param menu used to get menu panel
      */
     public void backButton(App app, MenuMain menu) {
@@ -60,31 +62,20 @@ public class Tutorial {
         return backButton;
     }
 
-    public void setBackButton(JButton backButton) {
-        this.backButton = backButton;
-    }
 
     public JLabel getText1tut() {
         return text1tut;
     }
 
-    public void setText1tut(JLabel text1tut) {
-        this.text1tut = text1tut;
-    }
 
     public JLabel getText2tut() {
         return text2tut;
     }
 
-    public void setText2tut(JLabel text2tut) {
-        this.text2tut = text2tut;
-    }
 
     public JLabel getText3tut() {
         return text3tut;
     }
 
-    public void setText3tut(JLabel text3tut) {
-        this.text3tut = text3tut;
-    }
+
 }

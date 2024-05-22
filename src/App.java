@@ -25,7 +25,6 @@ public class App extends JFrame {
     public App() {
 
 
-
         setTitle("Influencer Tycoon");
         setSize(600, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -113,20 +112,5 @@ public class App extends JFrame {
         this.username = username;
     }
 
-    @Override
-    public String toString() {
-        return "App{" +
 
-                ", gamePanel=" + gamePanel +
-                ", panelMain=" + panelMain +
-                ", textField1=" + textField1 +
-                ", submitButton=" + submitButton +
-                ", username='" + username + '\'' +
-                ", welcomeScreen=" + welcomeScreen +
-                ", rootPane=" + rootPane +
-                ", rootPaneCheckingEnabled=" + rootPaneCheckingEnabled +
-                ", accessibleContext=" + accessibleContext +
-                ", accessibleContext=" + accessibleContext +
-                '}';
-    }
 }

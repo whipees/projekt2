@@ -174,6 +174,7 @@ public class Game extends JFrame {
 
     /**
      * displays sub count
+     *
      * @return subcounter
      */
     public JLabel getSubscribersText() {
@@ -296,26 +297,5 @@ public class Game extends JFrame {
         this.auto10check = auto10check;
     }
 
-    @Override
-    public String toString() {
-        return "Game{" +
-                "panel=" + panel +
-                ", shopPanel=" + shopPanel +
-                ", subscribersText=" + subscribersText +
-                ", miningButton=" + miningButton +
-                ", shopButton=" + shopButton +
-                ", hitext=" + hitext +
-                ", addtwo=" + addtwo +
-                ", addten=" + addten +
-                ", addtwenty=" + addtwenty +
-                ", subscribers=" + subscribers +
-                ", problemCheck=" + problemCheck +
-                ", problemCheck2=" + problemCheck2 +
-                ", startTime=" + startTime +
-                ", rootPane=" + rootPane +
-                ", rootPaneCheckingEnabled=" + rootPaneCheckingEnabled +
-                ", accessibleContext=" + accessibleContext +
-                ", accessibleContext=" + accessibleContext +
-                '}';
-    }
+
 }

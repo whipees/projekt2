@@ -45,40 +45,57 @@ public class Game extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 updateSubs();
-                /**
-                 * if user gets 500 or 501 seubs, he will have a problem and his subs will do away, cant happen twice
-                 */
-                if (subscribers == 500 && problemCheck || subscribers == 501 && problemCheck) {
-                    JOptionPane.showMessageDialog(miningButton, "Oh no, you did something very very badly. The subscribers are going away");
-                    setSubscribers(getSubscribers() - 350);
-                    setProblemCheck(false);
-                    subscribersText.setText("Subscribers: " + subscribers);
-                }
-                /**
-                 * same thing but with 1000 or 1001
-                 */
-                if (subscribers == 1000 && problemCheck2 || subscribers == 1001 && problemCheck2) {
-                    JOptionPane.showMessageDialog(miningButton, "Oh no, you did something very very badly. The subscribers are going away");
-                    setSubscribers(getSubscribers() - 650);
-                    setProblemCheck2(false);
-                    subscribersText.setText("Subscribers: " + subscribers);
-                }
+                mining();
             }
         });
 
         shopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                app1.getContentPane().removeAll();
-                app1.getContentPane().add(shopPanel);
-                app1.revalidate();
-                app1.repaint();
-
-                shop.setMoney(subscribers);
+                startShop(app1, shop);
             }
         });
 
 
+    }
+
+    /**
+     * Method used to switch to shop
+     *
+     * @param app1 to change scenery
+     * @param shop to get shop panel
+     */
+    public void startShop(App app1, Shop shop) {
+        app1.getContentPane().removeAll();
+        app1.getContentPane().add(shopPanel);
+        app1.revalidate();
+        app1.repaint();
+
+        shop.setMoney(subscribers);
+    }
+
+    /**
+     * method used to get sub count going
+     */
+    public void mining() {
+        /**
+         * if user gets 500 or 501 seubs, he will have a problem and his subs will do away, cant happen twice
+         */
+        if (subscribers == 500 && problemCheck || subscribers == 501 && problemCheck) {
+            JOptionPane.showMessageDialog(miningButton, "Oh no, you did something very very badly. The subscribers are going away");
+            setSubscribers(getSubscribers() - 350);
+            setProblemCheck(false);
+            subscribersText.setText("Subscribers: " + subscribers);
+        }
+        /**
+         * same thing but with 1000 or 1001
+         */
+        if (subscribers == 1000 && problemCheck2 || subscribers == 1001 && problemCheck2) {
+            JOptionPane.showMessageDialog(miningButton, "Oh no, you did something very very badly. The subscribers are going away");
+            setSubscribers(getSubscribers() - 650);
+            setProblemCheck2(false);
+            subscribersText.setText("Subscribers: " + subscribers);
+        }
     }
 
     /**

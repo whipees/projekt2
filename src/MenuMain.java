@@ -27,42 +27,66 @@ public class MenuMain {
         Game g = new Game(app);
         Tutorial t = new Tutorial(app, this);
         Credits c = new Credits(app, this);
-        /**
-         * loads into game onclick
-         */
+
         playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                app.getContentPane().removeAll();
-                app.getContentPane().add(g.getPanel());
-                app.revalidate();
-                app.repaint();
+                startGame(app, g);
             }
         });
-        /**
-         * loads into tutorial
-         */
+
         tutorialButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                app.getContentPane().removeAll();
-                app.getContentPane().add(t.getTutorialPanel());
-                app.revalidate();
-                app.repaint();
+                startTutorial(app, t);
             }
         });
-        /**
-         * loads into credits
-         */
+
         creditsButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                app.getContentPane().removeAll();
-                app.getContentPane().add(c.getPanel());
-                app.revalidate();
-                app.repaint();
+                startCredits(app, c);
             }
         });
+    }
+
+    /**
+     * loads into game onclick
+     *
+     * @param app to change scenery
+     * @param g   to start game
+     */
+    public void startGame(App app, Game g) {
+        app.getContentPane().removeAll();
+        app.getContentPane().add(g.getPanel());
+        app.revalidate();
+        app.repaint();
+    }
+
+    /**
+     * loads into tutorial
+     *
+     * @param app to change scenery
+     * @param t   to start tutorial Class
+     */
+    public void startTutorial(App app, Tutorial t) {
+        app.getContentPane().removeAll();
+        app.getContentPane().add(t.getTutorialPanel());
+        app.revalidate();
+        app.repaint();
+    }
+
+    /**
+     * loads into credits
+     *
+     * @param app to change scenery
+     * @param c   to start Credits CLass
+     */
+    public void startCredits(App app, Credits c) {
+        app.getContentPane().removeAll();
+        app.getContentPane().add(c.getPanel());
+        app.revalidate();
+        app.repaint();
     }
 
     public JPanel getPanel1() {

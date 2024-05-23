@@ -24,7 +24,6 @@ public class App extends JFrame {
      */
     public App() {
 
-
         setTitle("Influencer Tycoon");
         setSize(600, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,22 +31,27 @@ public class App extends JFrame {
 
         getContentPane().add(panelMain); // Add the initial panel to the content pane
 
-        /**
-         * If user enters his name dialog will pop up
-         * if not his name will be set to Influencer
-         */
+
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String name = textField1.getText();
-                username = name;
-
-
-                JOptionPane.showMessageDialog(submitButton, "Hello, " + name + "!");
-                startGame();
+                btnClick();
             }
         });
         setVisible(true);
+    }
+
+    /**
+     * If user enters his name dialog will pop up
+     * if not his name will be set to Influencer
+     */
+    public void btnClick() {
+        String name = textField1.getText();
+        username = name;
+
+
+        JOptionPane.showMessageDialog(submitButton, "Hello, " + name + "!");
+        startGame();
     }
 
     /**

@@ -61,7 +61,7 @@
               <hideActionText value="false"/>
               <horizontalAlignment value="0"/>
               <horizontalTextPosition value="0"/>
-              <text value="Button"/>
+              <text value="Enter"/>
             </properties>
           </component>
         </children>

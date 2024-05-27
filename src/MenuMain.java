@@ -19,7 +19,7 @@ public class MenuMain {
     private JButton tutorialButton;
 
     /**
-     * All the classes for buttons are created here, also the actionlisteners
+     * All the classes for buttons are created here, also the action-listeners
      *
      * @param app used to change the main content pane
      */

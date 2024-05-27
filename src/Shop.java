@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Shop class
- * user upgrades his game expirience here
+ * user upgrades his game experience here
  */
 public class Shop extends JFrame {
     private int money;
@@ -189,7 +189,7 @@ public class Shop extends JFrame {
     }
 
     /**
-     * updates money every two secs to be displayed corectlly in the shop
+     * updates money every two secs to be displayed correctly in the shop
      *
      * @param game to get subs
      */
@@ -217,7 +217,7 @@ public class Shop extends JFrame {
     }
 
     /**
-     * if you buy it, it will be set to non active button
+     * if you buy it, it will be set to non-active button
      *
      * @param game to start the method in the game class
      */
@@ -226,7 +226,7 @@ public class Shop extends JFrame {
     }
 
     /**
-     * if you buy it, it will be set to non active button
+     * if you buy it, it will be set to non-active button
      *
      * @param game to start the method in the game class
      */
@@ -236,7 +236,7 @@ public class Shop extends JFrame {
     }
 
     /**
-     * if you buy it, it will be set to non active button
+     * if you buy it, it will be set to non-active button
      *
      * @param game to start the method in the game class
      */

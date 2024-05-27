@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.Scanner;
 
 /**
- * All of the  game construction is generated here
+ * All the  game construction is generated here
  */
 public class App extends JFrame {
 
@@ -18,7 +18,7 @@ public class App extends JFrame {
     private JPanel welcomeScreen;
 
     /**
-     * Contstructor for App class.
+     * Constructor for App class.
      * Builds Jframe (title,size, etc.)
      * Contains 1 actionListener
      */

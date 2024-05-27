@@ -14,7 +14,7 @@ public class Tutorial {
     private JLabel text3tut;
 
     /**
-     * There is a action listener for button to get back to MainMenu
+     * There is an action listener for button to get back to MainMenu
      *
      * @param app  used to change content pane
      * @param menu used to get back to menu screen

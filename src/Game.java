@@ -25,7 +25,7 @@ public class Game extends JFrame {
     private long startTime = System.currentTimeMillis();
 
     /**
-     * ActionListeres are for mining or switching to shops
+     * ActionListeners are for mining or switching to shops
      *
      * @param app1 to change the panel
      */
@@ -79,7 +79,7 @@ public class Game extends JFrame {
      */
     public void mining() {
         /**
-         * if user gets 500 or 501 seubs, he will have a problem and his subs will do away, cant happen twice
+         * if user gets 500 or 501 subs, he will have a problem and his subs will do away, cant happen twice
          */
         if (subscribers == 500 && problemCheck || subscribers == 501 && problemCheck) {
             JOptionPane.showMessageDialog(miningButton, "Oh no, you did something very very badly. The subscribers are going away");
@@ -107,7 +107,7 @@ public class Game extends JFrame {
     }
 
     /**
-     * if user buys this auto upgdrade it will automatically add 2 subs every two sec
+     * if user buys this auto upgrade it will automatically add 2 subs every two sec
      */
     public void startSubAutoTwoUpdate() {
 
@@ -136,7 +136,7 @@ public class Game extends JFrame {
     }
 
     /**
-     * if user buys this auto upgdrade it will automatically add 10 subs every two sec
+     * if user buys this auto upgrade it will automatically add 10 subs every two sec
      */
     public void startSubAutoTenUpdate() {
         Timer timer = new Timer(2000, new ActionListener() {
@@ -161,7 +161,7 @@ public class Game extends JFrame {
     }
 
     /**
-     * if user buys this auto upgdrade it will automatically add 100 subs every two sec
+     * if user buys this auto upgrade it will automatically add 100 subs every two sec
      */
     public void startSubAutoHunUpdate() {
         Timer timer = new Timer(2000, new ActionListener() {

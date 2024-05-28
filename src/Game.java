@@ -173,6 +173,9 @@ public class Game extends JFrame {
         timer.start();
     }
 
+    /**
+     * Method to correctly add subs to user based on what he has bought in shop
+     */
     public void updateSubs() {
         if (!addtwo && !addten && !addtwenty) {
             subscribers++;

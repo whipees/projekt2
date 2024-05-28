@@ -29,7 +29,7 @@ public class App extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-        getContentPane().add(panelMain); // Add the initial panel to the content pane
+        getContentPane().add(panelMain);
 
 
         submitButton.addActionListener(new ActionListener() {
@@ -61,8 +61,8 @@ public class App extends JFrame {
         MenuMain menuMain = new MenuMain(this);
         gamePanel = menuMain.getPanel1();
         System.out.println(username);
-        getContentPane().remove(panelMain); // Remove the initial panel
-        getContentPane().add(gamePanel); // Add the panel from Game class
+        getContentPane().remove(panelMain);
+        getContentPane().add(gamePanel);
         revalidate();
         repaint();
     }

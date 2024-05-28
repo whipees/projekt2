@@ -5,7 +5,7 @@ import java.awt.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-class AppTest{
+class AppTest {
 
 
     @Test
@@ -28,7 +28,6 @@ class AppTest{
 
         Assertions.assertTrue(outContent.toString().contains("testUser"));
     }
-
 
 
 }

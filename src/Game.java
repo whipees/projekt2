@@ -30,6 +30,7 @@ public class Game extends JFrame {
      * @param app1 to change the panel
      */
     public Game(App app1) {
+
         /**
          * IF user doesn't set his own username it will change to Influencer - it is set in .form file
          */

@@ -44,6 +44,7 @@ public class Game extends JFrame {
         miningButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                maxValueCheck();
                 updateSubs();
                 mining();
             }
@@ -133,6 +134,15 @@ public class Game extends JFrame {
         subscribersText.setText("Subscribers: " + subscribers);
 
 
+    }
+
+    /**
+     * IF you get to the max integer value, you are going to start again
+     */
+    public void maxValueCheck() {
+        if (subscribers == Integer.MAX_VALUE) {
+            setSubscribers(1);
+        }
     }
 
     /**
